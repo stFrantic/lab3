@@ -79,7 +79,31 @@ public class MainFrame extends JFrame {
         };
         searchValueMenuItem = tableMenu.add(searchValueAction);
         searchValueMenuItem.setEnabled(true);
-        
+
+        Action aboutProgramAction=new AbstractAction("О программе") {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Box information=Box.createVerticalBox();
+                JLabel author = new JLabel("Автор: Мурашкин Георгий");
+                JLabel group = new JLabel("студент 6 группы");
+                information.add(Box.createVerticalGlue());
+                information.add(author);
+                information.add(Box.createVerticalStrut(10));
+                information.add(group);
+                information.add(Box.createVerticalStrut(10));
+                information.add(Box.createVerticalStrut(10));
+                information.add(Box.createVerticalGlue());
+
+
+                JOptionPane.showMessageDialog(MainFrame.this,
+                        information, "" +
+                                "О программе", JOptionPane.INFORMATION_MESSAGE);
+
+            }
+        };
+        informationItem = spravkaMenu.add(aboutProgramAction);
+        informationItem.setEnabled(true);
+
 
         JButton calculateButton = new JButton("Вычислить");
         calculateButton.addActionListener(new ActionListener() {
